@@ -1,0 +1,29 @@
+div(ng-controller = 'selectCtrl')
+    h3 From Year:
+    select(ng-options='year as year for year in fromYear' name="{{year}}" ng-model='selectedFromYear',ng-change="toYearFun(selectedFromYear)")
+    br
+    h3 To Year:
+    i {{selectedFromYear}}
+    br
+    select(ng-options='year as year for year in toYear' name="{{year}}" ng-model='selectedToYear')
+    br
+    i {{selectedToYear}}
+    br
+    h3 States
+    label Callifornia:
+        input(type="checkbox" value="CA" name="checkboxCA" ng-model="checkboxCA")
+        br
+        i {{checkboxCA}}
+    br
+    label Oregon:
+        input(type="checkbox" value="OR" name="checkboxWA" ng-model="checkboxWA")
+        br
+        i {{checkboxWA}}
+    br
+    label Washington:
+     input(type="checkbox" value="WA" name="checkboxOR" ng-model="checkboxOR")
+     br
+     i {{checkboxOR}}
+    h2 click to submit the selection:
+    a(href="/tab2")
+        input(type="submit" name="inputSubmit" ng-click="callToInputToQueryData(selectedFromYear,selectedToYear,checkboxCA,checkboxWA,checkboxOR)")

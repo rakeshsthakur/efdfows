@@ -1,0 +1,18 @@
+ui-gmap-google-map(center='map.center' zoom = 'map.zoom')
+    ui-gmap-marker(coords = "marker.coords" idkey="marker.id")
+        ui-gmap-window(options = "windowOptions" closeClick="colseClick()")
+            div.infoWindow
+                b Event Details: {{coordsWindow}}
+                ul
+                li
+                    | This event happened on :
+                    b {{title[0]}}
+                li
+                    | Deaths from Event :
+                    b {{title[1]}}
+                li
+                    | Injuries from Event :
+                    b {{title[2]}}
+                li
+                    | Property loss from Event :
+                    b ${{propertyLoss}}

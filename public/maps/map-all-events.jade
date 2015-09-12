@@ -1,0 +1,8 @@
+//
+   Created by rthakur on 9/1/2015.
+ui-gmap-google-map(center='map.center' zoom = 'map.zoom')
+   ui-gmap-markers(models="allData" coords="'self'" icon="'icon'")
+      ui-gmap-windows(options = "map.tooltip" ng-cloak)
+         div.infoWindow
+            div(ng-non-bindable)
+               |{{title}}

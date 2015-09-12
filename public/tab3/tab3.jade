@@ -1,0 +1,55 @@
+//
+   Created by rakeshthakur on 8/30/Bar5.
+div.col-md-8.col-md-offset-2
+    div.row
+        div.col-md-8.col-md-offset-2(id = "line-bar")
+            div(id = "line-bar")
+                div.panel.panel-default
+                    div.panel-heading
+                        b Deaths per year bar graph
+                    div.panel-body
+                        <canvas id="line" class="chart chart-line" chart-data="dataDeathsBar" chart-labels="labelsBar" chart-legend="true" chart-series="seriesBar" chart-click="onClick" ></canvas>
+                        //canvas.chart.chart-bar(id="bar" chart-data="dataDeathsBar" chart-labels="labelsBar" chart-legend="true" click="onClick" chart-series="seriesBar")
+    div.row
+        div.col-md-8.col-md-offset-2(id = "line-bar")
+            div.panel.panel-default
+                div.panel-heading
+                    b Injuries per year bar graph
+                canvas.chart.chart-bar(id="bar" chart-data="dataInjuriesBar" chart-labels="labelsBar" chart-legend="true" click="onClick" chart-series="seriesBar")
+    div.row
+        div.col-md-8.col-md-offset-2(id = "chart-doughnut")
+            div.panel.panel-default
+                div.panel-heading
+                    b Property loss per state
+                canvas.chart.chart-doughnut(id="doughnut" chart-data="dataDoughnut" chart-labels="labelsDoughnut" chart-legend="true" click="onClick"  chart-options = "options")
+    div.row
+        div.col-md-8.col-md-offset-2(id = "chart-line")
+            div.panel.panel-default
+                div.panel-heading
+                    b Property loss per year and State
+                canvas.chart.chart-line(id="line" chart-data="dataLine" chart-labels="labelsLine" chart-legend="true" click="onClick"  chart-series = "seriesLine")
+
+//<html xmlns="http://www.w3.org/1999/xhtml">
+//<head>
+//<meta name="generator" content="HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" />
+//<meta charset="utf-8" />
+//<title>JS Bin</title>
+////<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" type="text/css" />
+////<link rel="stylesheet" href="http://cdn.rawgit.com/jtblin/angular-chart.js/master/dist/angular-chart.css" type="text/css" />
+////<script src="http://cdn.rawgit.com/nnnick/Chart.js/master/Chart.min.js" type="text/javascript"></script>
+////<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"type="text/javascript" ></script>
+////<script src="http://cdn.rawgit.com/jtblin/angular-chart.js/master/dist/angular-chart.js"type="text/javascript" ></script>
+//</head>
+//<body ng-app="app">
+//<div class="col-lg-6 col-sm-12" id="line-chart" ng-controller="chartCtrl">
+//<div class="panel panel-default">
+//<div class="panel-heading">
+//Chart
+//</div>
+//<div class="panel-body">
+//<canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" click="onClick" series="series"></canvas>
+//</div>
+//</div>
+//</div>
+//</body>
+//</html>

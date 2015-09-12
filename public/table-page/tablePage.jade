@@ -1,0 +1,37 @@
+//
+   Created by rakeshthakur on 8/29/15.
+
+.container.top-padding-med
+    .pull-right
+        form.form-inline
+            .form-group
+                input.form-control(ng-model="searchText", placeholder="Filter")
+            .form-group.margin-left-med
+                select.form-control(ng-model="sortOrder",ng-options="item.value as item.text for item in sortOptions")
+    a.btn.btn-default(href="/map-all-events" role="button") View all events
+    input.form-control.table-control(type="number" ng-model="itemsByPage")
+    table.table.table-hover(st-safe-src="rowCollection" st-table="displayedCollection")
+        thead
+            tr
+                th County
+                th State
+                th Date
+                th Type
+                th People Injuries
+                th Death Count
+                th Property Damage
+        tbody
+            tr(ng-repeat="eventdata in displayedCollection | filter:searchText | orderBy:sortOrder" ng-click = "getEventCoords(eventdata.eventBeginLatitude, eventdata.eventBeginLongitude); getToolTipInfo(eventdata.eventDate, eventdata.eventDeaths, eventdata.eventInjuries,eventdata.eventPropertyDamage)")
+                td
+                    a(href ='/maps')
+                      |  {{eventdata.eventLocation}}
+                td {{eventdata.eventState}}
+                td {{eventdata.eventDate | date}}
+                td {{eventdata.eventType}}
+                td {{eventdata.eventInjuries}}
+                td {{eventdata.eventDeaths}}
+                td {{eventdata.eventPropertyDamage | currency}}
+        tfoot
+            tr
+                td.text-center(colspan="7")
+                    div(st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7")
