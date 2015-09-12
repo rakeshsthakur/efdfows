@@ -9,9 +9,20 @@ angular.module('app').controller('getQueryData', function($scope, userDataServic
         allTableData(data);
 
     });
-    $scope.itemsByPage=10;
+    $scope.itemsByPage=12;
+    $scope.sortOptions = [
+        {value:"County/Zone",text:"Sort by County/Zone"},
+        {value:"State",text:"Sort by state"},
+        {value:"Date",text:"Sort by Date"},
+        {value:"Injured Count",text:"Sort by Injuried Count"},
+        {value:"Death Count",text:"Sort by Death Count"},
+        {value:"Property Damage",text:"Sort by Property Damage"}
+    ];
+    console.log($scope.sortOptions[0]);
+    console.log($scope.sortOrder);
+    $scope.sortOrder = $scope.sortOptions[0].value;
 
-    /**various functions*/
+    /**support for map ctrls*/
     $scope.getEventCoords= function (latitude, longitude) {
         var coords = [];
         coords.push(latitude,longitude);
@@ -23,7 +34,6 @@ angular.module('app').controller('getQueryData', function($scope, userDataServic
         mapCoordsService.addToolTipWindowData(toolTipInfoWindow);
 
     };
-    /*working Code*/
     var allTableData=function(tableData){
         $scope.rowCollection = tableData;
         $scope.displayedCollection = [].concat($scope.rowCollection);

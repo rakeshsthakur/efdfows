@@ -4,7 +4,7 @@
 'use strict';
 app.controller("mapAllCtrl", function($scope, uiGmapGoogleMapApi,mapCoordsService) {
     var coords = mapCoordsService.getCoordsData();
-    $scope.map = { center: { latitude: 32.7150, longitude: 117.1625 }, zoom: 3 };
+    $scope.map = { center: { latitude: 41, longitude: -120 }, zoom: 5 };
     $scope.allData = mapCoordsService.getAllMakersData();
     uiGmapGoogleMapApi.then(function(maps) {
 

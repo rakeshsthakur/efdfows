@@ -6,31 +6,31 @@
         form.form-inline
             .form-group
                 input.form-control(ng-model="searchText", placeholder="Filter")
-            .form-group.margin-left-med
+            //.form-group.margin-left-med
                 select.form-control(ng-model="sortOrder",ng-options="item.value as item.text for item in sortOptions")
     a.btn.btn-default(href="/map-all-events" role="button") View all events
     input.form-control.table-control(type="number" ng-model="itemsByPage")
     table.table.table-hover(st-safe-src="rowCollection" st-table="displayedCollection")
         thead
             tr
-                th County
-                th State
-                th Date
-                th Type
-                th People Injuries
-                th Death Count
-                th Property Damage
-        tbody
+                th.text-center(st-sort="countyZone") County/Zone
+                th.text-center(st-sort="State") State
+                th.text-center(st-sort="date") Date
+                th.text-center(st-sort="type") Type
+                th.text-center(st-sort="injuredCount") Injured Count
+                th.text-center(st-sort="deathCount") Death Count
+                th.text-center(st-sort="propertyDamage") Property Damage
+        tbody.text-center
             tr(ng-repeat="eventdata in displayedCollection | filter:searchText | orderBy:sortOrder" ng-click = "getEventCoords(eventdata.eventBeginLatitude, eventdata.eventBeginLongitude); getToolTipInfo(eventdata.eventDate, eventdata.eventDeaths, eventdata.eventInjuries,eventdata.eventPropertyDamage)")
-                td
+                td.col-md-1
                     a(href ='/maps')
                       |  {{eventdata.eventLocation}}
-                td {{eventdata.eventState}}
-                td {{eventdata.eventDate | date}}
-                td {{eventdata.eventType}}
-                td {{eventdata.eventInjuries}}
-                td {{eventdata.eventDeaths}}
-                td {{eventdata.eventPropertyDamage | currency}}
+                td.col-md-1 {{eventdata.eventState}}
+                td.col-md-1 {{eventdata.eventDate | date}}
+                td.col-md-1 {{eventdata.eventType}}
+                td.col-md-1 {{eventdata.eventInjuries}}
+                td.col-md-1 {{eventdata.eventDeaths}}
+                td.col-md-1 {{eventdata.eventPropertyDamage | currency}}
         tfoot
             tr
                 td.text-center(colspan="7")
