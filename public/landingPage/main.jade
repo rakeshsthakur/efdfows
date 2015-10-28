@@ -1,22 +1,14 @@
-//div.intro
-//    div.col-lg-8.col-lg-offset-2
-//        div.intropara
-//            p hey
-div.form-content
+div.form-content.jumbotron
     div.col-lg-8.col-lg-offset-2
         div(ng-controller = 'mainCtrl')
-
-            h3 From Year:
-            //i.fa.fa-calendar-o
-            select(ng-options='year as year for year in fromYear' name="{{year}}" ng-model='selectedFromYear',ng-change="toYearFun(selectedFromYear)")
-            //div(ng-hide="selectedFromYear")
-            //    br
-            //    p select the above to see end year
+            h1 Debris Flow Events
             br
-            h3 To Year:
+            span.years From Year:
+            select(ng-options='year as year for year in fromYear' name="{{year}}" ng-model='selectedFromYear',ng-change="toYearFun(selectedFromYear)")
+            span.years To Year:
             select(ng-options='year as year for year in toYear' name="{{year}}" ng-model='selectedToYear')
             br
-            h3 States
+            h3 Select States
             div.checkbox
                 label
                     input(type="checkbox" value="CA" name="checkboxCA" ng-model="checkboxCA")
@@ -30,8 +22,7 @@ div.form-content
                     input(type="checkbox" value="WA" name="checkboxWA" ng-model="checkboxWA")
                     |Washington
 
-            h2 Click to submit the selection:
+            //h2 Click submit button to submit the selection:
             div.submit-button(ng-if="selectedFromYear && selectedToYear &&(checkboxCA || checkboxOR || checkboxWA)")
                 a(href="/tables-page")
-                    input.btn.btn-default(type="submit" name="inputSubmit" ng-click="callToSaveUserData(selectedFromYear,selectedToYear,checkboxCA,checkboxOR,checkboxWA)")
-
+                    input.btn.btn-primary(type="submit" name="inputSubmit" ng-click="callToSaveUserData(selectedFromYear,selectedToYear,checkboxCA,checkboxOR,checkboxWA)")

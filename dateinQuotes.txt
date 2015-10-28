@@ -1,4 +1,0 @@
-
-
-=CHAR(34)&TEXT(A1,"mm/dd/yyyy")&CHAR(34) maybe.
-(adapt the format to what you need your example is not clear about your regional setting)

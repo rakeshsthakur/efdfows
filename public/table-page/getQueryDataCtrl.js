@@ -11,17 +11,16 @@ angular.module('app').controller('getQueryData', function($scope, userDataServic
     });
     $scope.itemsByPage=12;
     $scope.sortOptions = [
-        {value:"County/Zone",text:"Sort by County/Zone"},
-        {value:"State",text:"Sort by state"},
-        {value:"Date",text:"Sort by Date"},
-        {value:"Injured Count",text:"Sort by Injuried Count"},
-        {value:"Death Count",text:"Sort by Death Count"},
-        {value:"Property Damage",text:"Sort by Property Damage"}
+        {value:"eventLocation",text:"Sort by County/Zone"},
+        {value:"eventState",text:"Sort by state"},
+        {value:"eventDate",text:"Sort by Date"},
+        {value:"eventInjuries",text:"Sort by Injured Count"},
+        {value:"eventDeath",text:"Sort by Death Count"},
+        {value:"eventPropertyDamage",text:"Sort by Property Damage"}
     ];
     console.log($scope.sortOptions[0]);
-    console.log($scope.sortOrder);
     $scope.sortOrder = $scope.sortOptions[0].value;
-
+    console.log($scope.sortOrder);
     /**support for map ctrls*/
     $scope.getEventCoords= function (latitude, longitude) {
         var coords = [];
@@ -48,4 +47,16 @@ angular.module('app').controller('getQueryData', function($scope, userDataServic
         });
         mapCoordsService.addAllMakersData(allTableDataVariable);
     };
+
+    /* to make td tooltip*/
+    $scope.mouseOverToolTip = function(){
+    $('td').bind('mouseenter', function(){
+        var $this = $(this);
+        if(this.offsetWidth < this.scrollWidth && !$this.attr('title')){
+            $this.attr('title', $this.text());
+        }
+    });
+    };
+
 });
+

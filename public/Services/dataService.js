@@ -6,7 +6,7 @@ angular.module("app").factory("dataService",function(userDataService,$resource){
     var dbQueryFunction = function() {
         var dbQueryObject = "";
         var query = [];
-        if (length.query != 0) query = [];
+        if (query.length != 0) query = [];
         var query = userDataService.getUserData();
         if (query[0] !== false) {
             dbQueryObject = "{eventYear: {$gte: " + query[0];

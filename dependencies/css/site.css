@@ -12,18 +12,14 @@ body {
     max-height: 180px;
     overflow-x: hidden;
 }
-.angular-google-map-container { height: 600px; }
-.infoWindow{
-    widht: 100px;
-}
+.angular-google-map-container { height: 550px; }
 .footer {
     position: absolute;
     bottom: 0;
     width: 100%;
     text-align: center;
-    /* Set the fixed height of the footer here */
-    height: 40px;
-    background-color: #A3C2C2;
+    /*/!!* Set the fixed height of the footer here *!/*    /!*height: 40px;*!/*/
+    background-color: #e7e7e7;
 }
 
 .btn-circle {
@@ -54,15 +50,14 @@ body {
     display: table;
     width: 100%;
     height: 100%;
-    padding: 100px 0;
+    padding: 20px 0;
     text-align: center;
     color: #000;
-    /*background: url("intro-bg.jpg") no-repeat bottom center scroll;*/
-    /*background-color: #000000;*/
-    -webkit-background-size: cover;
+    /*/!!*background: url("intro-bg.jpg") no-repeat bottom center scroll;*!/*    /!!*background-color: #000000;*!/*    /!*-webkit-background-size: cover;*!/*/
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    margin-top: 100px;
 }
 .btn-default {
     border: 1px solid #42dca3;
@@ -108,4 +103,16 @@ select {
 
 footer p{
     margin: 10px 0 10px 0;
+}
+
+td{
+    width: 8.33333333%;
+    overflow: hidden;
+    max-width: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.years{
+    margin-left: 20px;
 }

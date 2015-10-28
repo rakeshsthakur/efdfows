@@ -10,6 +10,7 @@ app.controller("mapCtrl", function($scope, uiGmapGoogleMapApi,mapCoordsService) 
             longitude: coords[1]
         }
     };
+    //$scope.options={icon:'<i class="fa fa-map-marker"></i>'}
     $scope.windowOptions = {
         visible: false
     };
@@ -25,7 +26,6 @@ app.controller("mapCtrl", function($scope, uiGmapGoogleMapApi,mapCoordsService) 
     $scope.title = toolTipInfoData;
     $scope.propertyLoss =toolTipInfoData[3].toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
     $scope.coordsWindow = coords;
-    //$scope.title = title.push(coords,toolTipInfoData[0],toolTipInfoData[1] +" death(s) " + ", " + toolTipInfoData[2] + " injured and resulted in $"+ toolTipInfoData[3].toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + " Property loss";
 
     uiGmapGoogleMapApi.then(function(maps) {
 

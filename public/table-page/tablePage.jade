@@ -1,28 +1,27 @@
 //
    Created by rakeshthakur on 8/29/15.
-
 .container.top-padding-med
     .pull-right
         form.form-inline
             .form-group
                 input.form-control(ng-model="searchText", placeholder="Filter")
-            //.form-group.margin-left-med
+            .form-group.margin-left-med
                 select.form-control(ng-model="sortOrder",ng-options="item.value as item.text for item in sortOptions")
     a.btn.btn-default(href="/map-all-events" role="button") View all events
     input.form-control.table-control(type="number" ng-model="itemsByPage")
     table.table.table-hover(st-safe-src="rowCollection" st-table="displayedCollection")
         thead
             tr
-                th.text-center(st-sort="countyZone") County/Zone
-                th.text-center(st-sort="State") State
-                th.text-center(st-sort="date") Date
-                th.text-center(st-sort="type") Type
-                th.text-center(st-sort="injuredCount") Injured Count
-                th.text-center(st-sort="deathCount") Death Count
-                th.text-center(st-sort="propertyDamage") Property Damage
+                th.text-center County/Zone
+                th.text-center State
+                th.text-center Date
+                th.text-centerType Type
+                th.text-center Injured Count
+                th.text-center Death Count
+                th.text-center Property Damage
         tbody.text-center
             tr(ng-repeat="eventdata in displayedCollection | filter:searchText | orderBy:sortOrder" ng-click = "getEventCoords(eventdata.eventBeginLatitude, eventdata.eventBeginLongitude); getToolTipInfo(eventdata.eventDate, eventdata.eventDeaths, eventdata.eventInjuries,eventdata.eventPropertyDamage)")
-                td.col-md-1
+                td(ng-mouseover="mouseOverToolTip()").col-md-1
                     a(href ='/maps')
                       |  {{eventdata.eventLocation}}
                 td.col-md-1 {{eventdata.eventState}}

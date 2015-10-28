@@ -1,6 +1,6 @@
-var mongoose = require('mongoose');
-     Events = require('../models/eventModel'),
-     eventTest = require('../models/testModel');
+var mongoose = require('mongoose'),
+     Events = require('../models/eventModel');
+     //eventTest = require('../models/testModel');
 
 
 module.exports=function() {

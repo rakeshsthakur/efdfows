@@ -11,7 +11,7 @@ module.exports = function(app) {
     app.use('/dependencies', lessMiddleware(__dirname + '../../dependencies'));
 
     app.set('views', __dirname + '/..');
-    app.use('/dependencies', express.static(__dirname + '/../../dependencies'));
+        app.use('/dependencies', express.static(__dirname + '/../../dependencies'));
     app.use('/server', express.static('/..'));
     app.use(express.static(__dirname + '/../../public/'));
 };

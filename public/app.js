@@ -3,7 +3,7 @@ var app = angular.module('app', ['ngRoute','ngResource','uiGmapgoogle-maps','sma
 app.config(function($routeProvider,$locationProvider,uiGmapGoogleMapApiProvider,ChartJsProvider) {
     uiGmapGoogleMapApiProvider.configure({
         key: 'AIzaSyA7qpqpty5cv99e8HWb4FVRIwBR0desbUU',
-        v: '3.20', //defaults to latest 3.X anyhow
+        //v: '3.20', //defaults to latest 3.X anyhow
         libraries: 'weather,geometry,visualization'
     });
     $locationProvider.html5Mode({
